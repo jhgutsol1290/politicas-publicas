@@ -1,0 +1,95 @@
+body{
+    background-image: url(../img/blanco.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: justify;
+    font-size: 1.5rem;
+}
+
+nav{
+    font-size: 1rem;
+}
+
+/******POLICIES***/
+#policies{
+    padding-top: 1%;
+}
+/*******CARDS*****/
+.listColor{
+    background: #B38E5D;
+}
+
+.card{
+    height: 90%;
+    box-shadow: 0 5px 5px grey;
+}
+
+.card:hover{
+    -webkit-box-shadow: 0px 3px 9px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 3px 9px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 3px 9px -1px rgba(0,0,0,0.75);
+}
+
+#list{
+    width: 70%;
+}
+
+/*#policies, #shows{
+    display: none;
+}*/
+
+/*Card text*/
+.card-text{
+    font-style: italic;
+}
+
+/*Graph*/
+.graph{
+    width: 100%;
+    height: 21rem;
+    background: #f7f7f7;
+}
+
+.img-graph{
+    width: 35rem;
+    height: 5%;
+    border-radius: 10px;
+}
+
+/*DATA*/
+.data{
+    background: #f7f7f7;
+}
+
+/*Tweets*/
+.tweets{
+    width: 100%;
+    height: 21rem;
+}
+
+/*List-group-item*/
+.list-group-item img{
+    width: 5.3rem;
+    height: 5.39rem;
+    float: left;
+    border-radius: 10px;
+}
+
+.list-group-item p{
+    margin-top: 12px;
+    font-size: 2rem;
+}
+
+.list-group-item{
+    background: #f7f7f7;
+}
+
+/*****IMG_DESCRIPTION*****/
+#img-description{
+    width: 25rem;
+    height: 18.5rem;
+    border-radius: 30px;
+    float: left;
+}
+

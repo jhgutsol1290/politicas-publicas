@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Políticas Públicas</title>
+    <%- include("partials/head")%>
+    <link href= "/assets/css/index.css" rel="stylesheet">
+</head>
+<body>
+        <section id="policies" class="animated fadeInDown mt-5">
+          <div class="container-fluid">
+            <div class="row mt-2">
+              <div class="col-md-3">
+                <div class="card text-center data">
+                  <div class="card-body">
+                    <p class="card-text" id="id">"<%= image.title %>"</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card text-center data">
+                  <div class="card-body">
+                    <h5 class="card-title"><u>Eje</u></h5>
+                    <p class="card-text" id="eje"><%= image.axis %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card text-center data">
+                  <div class="card-body">
+                    <h5 class="card-title"><u>Fecha de presentación</u></h5>
+                    <p class="card-text"><%= image.presented.toDateString() %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card text-center data">
+                  <div class="card-body">
+                    <h5 class="card-title"><u>Grado de Cumplimineto</u></h5>
+                    <p class="card-text" id="status"><%= image.status %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+      <div class="container-fluid mt-2">
+        <div class="row">
+          <div class="col-9">
+            <div class="card text-center graph">
+              <div class="card-body">
+                <h3 class="card-title"><u>Grado de Cumplimiento</u></h3>
+                <div id="chart_div" class="mt-2">
+                  <% if(image.status === 'Sin iniciar'){%>
+                    <img class="img-fluid animated bounceInLeft delay-1s img-graph" src="/assets/img/sinIniciar.jpg" alt="Sin iniciar">
+                  <%} else if(image.status === 'Rota'){%>
+                    <img class="img-fluid animated bounceInLeft delay-1s img-graph" src="/assets/img/rota.jpg" alt="Sin iniciar">
+                  <%} else if(image.status === 'En proceso'){%>
+                    <img class="img-fluid animated bounceInLeft delay-1s img-graph" src="/assets/img/iniciado.jpg" alt="Sin iniciar">
+                  <%} else if(image.status === 'Cumplida'){%>
+                    <img class="img-fluid animated bounceInLeft delay-1s img-graph" src="/assets/img/finalizado.jpg" alt="Sin iniciar">
+                  <%}%>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card text-center data tweets">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <img src="https://serv2.raiolanetworks.es/wp-content/uploads/twitterlogodown.png" class="img-fluid" alt="twitter">
+                  <p><em><%= image.tweets %></em></p>
+                </li>
+                <li class="list-group-item">
+                  <img src="https://4.bp.blogspot.com/-wxEdzfW-Q24/WalfduyU6YI/AAAAAAAAJDU/7ZfmGGT7Hy0iTXyG467JCXCMaDuldnufgCLcBGAs/s1600/Radio_icon-icons.com_53189.png" class="img-fluid" alt="twitter">
+                  <p><em><%= image.radio %></em></p>
+                </li>
+                <li class="list-group-item">
+                  <img src="https://image.freepik.com/vector-gratis/television-retro_23-2147503074.jpg" class="img-fluid" alt="twitter">
+                  <p><em><%= image.tv %></em></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container-fluid mt-3">
+        <div class="row">
+          <div class="col-12">
+            <div class="card text-center graph">
+              <div class="card-body">
+                <img src="<%= image.path %>" class="img-fluid" alt="" id="img-description">
+                <p class="card-text"><%= image.description %></p>
+                <hr>
+                <div class="col-xl-9 col-sm-9" style="font-size: 1rem; float: right;">
+                  <p class="card-text"><b>Avance:</b></p>
+                    <ul>
+                      <li><%= image.comments %></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+</body>
+</html>
+<!--SECTION
+<section id="policies">
+        <div class="container-fluid">
+          <div class="row mt-3">
+            <div class="col-md-3">
+              <div class="card text-center data">
+                <div class="card-body">
+                  <h5 class="card-title">Número</h5>
+                  <p class="card-text" id="id"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card text-center data">
+                <div class="card-body">
+                  <h5 class="card-title">Eje</h5>
+                  <p class="card-text" id="eje"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card text-center data">
+                <div class="card-body">
+                  <h5 class="card-title">Fecha de presentación</h5>
+                  <p class="card-text">11/11/18</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card text-center data">
+                <div class="card-body">
+                  <h5 class="card-title">Status</h5>
+                  <p class="card-text" id="status">En Curso</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+    <div class="container-fluid mt-2">
+      <div class="row">
+        <div class="col-9">
+          <div class="card text-center graph">
+            <div class="card-body">
+              <h5 class="card-title">Status</h5>
+              <p class="card-text" id="status1"></p>
+              <div id="chart_div" class="mt-5">
+                Aquí se inserta la gráfica
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card text-center data tweets">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <img src="https://serv2.raiolanetworks.es/wp-content/uploads/twitterlogodown.png" alt="twitter">
+                <p><em>3580</em></p>
+              </li>
+              <li class="list-group-item">
+                <img src="https://4.bp.blogspot.com/-wxEdzfW-Q24/WalfduyU6YI/AAAAAAAAJDU/7ZfmGGT7Hy0iTXyG467JCXCMaDuldnufgCLcBGAs/s1600/Radio_icon-icons.com_53189.png" alt="twitter">
+                <p><em>3580</em></p>
+              </li>
+              <li class="list-group-item">
+                <img src="https://image.freepik.com/vector-gratis/television-retro_23-2147503074.jpg" alt="twitter">
+                <p><em>3580</em></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="card text-center graph">
+            <div class="card-body">
+              <p class="card-text">“En primer lugar, vamos a darle atención especial a los pueblos indígenas de México (en los programas del gobierno); es una ignominia que nuestros pueblos originarios vivan desde hace siglos bajo la opresión y el racismo, con la pobreza y la marginación a cuestas. Todos los programas del gobierno tendrán como población preferente a los pueblos indígenas de las diversas culturas del país”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    -->
